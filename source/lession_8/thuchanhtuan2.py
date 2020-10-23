@@ -176,12 +176,12 @@
 # print(s[::-1])
 # print(s[-2::-3])
 
-def finput(n):
-    arr=[]
-    for i in range(n):
-        v = int(input(f"Input item[{i}]: "))
-        arr.append(v)
-    return arr
+# def finput(n):
+#     arr=[]
+#     for i in range(n):
+#         v = int(input(f"Input item[{i}]: "))
+#         arr.append(v)
+#     return arr
 
 # def fsum(arr):
 #     sum = 0
@@ -189,24 +189,24 @@ def finput(n):
 #         sum += arr[i]
 #     return sum
 
-def fsum(arr):
-    sum = 0
-    for i in arr:
-        sum += i
-    return sum
+# def fsum(arr):
+#     sum = 0
+#     for i in arr:
+#         sum += i
+#     return sum
 
-def fmax(arr):
-    max = arr[0]
-    for i in range(1,len(arr)):
-        if arr[i]>max:
-            max = arr[i]
-    return max
+# def fmax(arr):
+#     max = arr[0]
+#     for i in range(1,len(arr)):
+#         if arr[i]>max:
+#             max = arr[i]
+#     return max
 
-n = int(input("Nhập số lượng phần tử: "))
-arr=finput(n)
-print(f"sum = {fsum(arr)}")
-print(f"max = {fmax(arr)}")
-print(f"avg = {fsum(arr)/len(arr)}")
+# n = int(input("Nhập số lượng phần tử: "))
+# arr=finput(n)
+# print(f"sum = {fsum(arr)}")
+# print(f"max = {fmax(arr)}")
+# print(f"avg = {fsum(arr)/len(arr)}")
 
 # a = []
 # m = int(input("Nhập số tự nhiên m: "))
@@ -224,4 +224,120 @@ print(f"avg = {fsum(arr)/len(arr)}")
 #     for j in range(n):
 #         print(a[i][j], end=" ")
 #     print()
+
+# m: số dòng, n: số cột
+# def finput(m, n):
+#     arr = []
+#     for r in range(m):
+#         row = []
+#         for c in range(n):
+#             row.append(int(input(f"Input item[{r}][{c}]: ")))
+#         arr.append(row)
+#     return arr
+
+
+# def foutput(arr):
+#     for r in arr:
+#         for c in r:
+#             print(c, end=" ")
+#         print()  # Xuống dòng
+
+
+# def fsum(arr):
+#     result = 0
+#     for r in arr:
+#         for c in r:
+#             result += c
+#     return result
+
+
+# def fmax(arr):
+#     result = arr[0][0]
+#     for r in arr:
+#         for c in r:
+#             if c > result:
+#                 result = c
+#     return result
+
+
+# arr = finput(3, 3)
+# # arr = [[1,2,3],[4,5,6],[7,8,9]]
+# foutput(arr)
+# print(f"Sum: {fsum(arr)}")
+# print(f"Max: {fmax(arr)}")
+
+# languages = ["Python", "C/C++", "C#", 'Java', "Kotlin"]
+# keys = ['Language', 'Programming']
+# print([x+y for x in languages for y in keys])  # Trong for còn có for
+
+# random = [8, 1, 2, 5, 6, 0, 7, 9]
+# new_list = [x for x in random if x % 2 == 0]
+# print(new_list)
+
+# def input_list(n):
+#     result = []
+#     for i in range(n):
+#         x = int(input(f"Enter item[{i}]: "))
+#         result.append(x)
+#     return result
+
+# def tinh_tong(arr):
+#     tong = 0
+#     for i in arr:
+#         tong += i
+#     return tong
+
+# def tinh_tong_2(*arr):
+#     result = []
+#     tong = 0
+#     for i in arr:
+#         tong += i
+#         result.append(i)
+#     return tong,result
+
+
+# n = int(input("Nhap so luong phan tu: "))
+# a = input_list(n)
+# print(f"Tổng của list là: {tinh_tong(a)}")
+# print(type(tinh_tong(a)))
+# print("---------------")
+# print(f"Tổng của list là: {tinh_tong_2(*a)}")
+# print(type(tinh_tong_2(*a)))
+
+def input_list_2d(m, n): # m - số hàng, n - số cột
+    result = []
+    j = 0
+    while True:
+        result_row = []
+        i = 0
+        while True:
+            v = input(f"Nhập phần tử {j},{i}: ")
+            try:
+                result_row.append(int(v))
+                i += 1
+                if i >= n:
+                    break
+            except:
+                print("Chưa nhập đúng số nguyên. Nhập lại!")
+
+        result.append(result_row)
+        j += 1
+        if j >= m:
+            break
+
+    return result
+
+def foutput(arr):
+    for r in arr:
+        for c in r:
+            print(c, end=" ")
+        print()  # Xuống dòng
+
+m = int(input("Nhập số hàng: "))
+n = int(input("Nhập số cột: "))
+a = input_list_2d(m,n)
+foutput(a)
+
+
+
 
